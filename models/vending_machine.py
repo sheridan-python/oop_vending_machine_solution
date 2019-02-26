@@ -4,6 +4,15 @@ Contains vending machine model.
 from .import money
 
 
+COIN_CLASSES = [
+    money.FiveCent,
+    money.TenCent,
+    money.Quarter,
+    money.Loonie,
+    money.Toonie
+]
+
+
 class VendingMachine:
     def __init__(self):
         self.inserted_coins = []
@@ -18,4 +27,12 @@ class VendingMachine:
         return sum(self.inserted_coins)
 
     def get_change(self):
-        return self.inserted_coins
+        coins = []
+        balance = self.get_balance()
+
+        for coin_class in COIN_CLASSES:
+            if coin_class.value == balance:
+                coin = coin_class()  # Create a coin instance
+                coins.append(coin)
+
+        return coins
