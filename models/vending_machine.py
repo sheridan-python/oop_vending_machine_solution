@@ -16,3 +16,7 @@ class VendingMachine:
 
     def get_balance(self):
         return sum(self.inserted_coins)
+
+    def get_change(self):
+        change = []
+        return change
