@@ -19,3 +19,11 @@ def test_insert_quarter():
     """
     machine = VendingMachine()
     machine.insert_coin(money.Quarter())
+
+
+def test_insert_five_cents():
+    """
+    Given a five cent, no error should be raised.
+    """
+    machine = VendingMachine()
+    machine.insert_coin(money.FiveCent())

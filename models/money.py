@@ -21,5 +21,9 @@ class Coin:
     pass
 
 
+class FiveCent(Coin):
+    pass
+
+
 class Quarter(Coin):
     pass
