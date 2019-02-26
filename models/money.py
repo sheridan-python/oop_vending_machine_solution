@@ -25,5 +25,13 @@ class FiveCent(Coin):
     pass
 
 
+class TenCent(Coin):
+    pass
+
+
 class Quarter(Coin):
+    pass
+
+
+class Loonie(Coin):
     pass
