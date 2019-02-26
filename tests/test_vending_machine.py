@@ -79,3 +79,8 @@ def test_get_balance_returns_the_sum_of_inserted_coins():
     machine.insert_coin(money.FiveCent())
 
     assert machine.get_balance() == money.DollarAmount('3.40')
+
+
+def test_get_change_when_nothing_inserted():
+    machine = VendingMachine()
+    assert machine.get_change() == []
