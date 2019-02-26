@@ -51,3 +51,16 @@ def test_insert_toonie():
     """
     machine = VendingMachine()
     machine.insert_coin(money.Toonie())
+
+
+def test_insert_coins_stores_on_object():
+    """
+    Given that coins are inserted in to the vending machine,
+    they should be stored on the object as a inserted_coins property.
+    """
+    machine = VendingMachine()
+    coins = [money.Toonie(), money.TenCent(), money.FiveCent()]
+    for coin in coins:
+        machine.insert_coin(coin)
+
+    assert machine.inserted_coins == coins

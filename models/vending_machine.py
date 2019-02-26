@@ -5,8 +5,11 @@ from .import money
 
 
 class VendingMachine:
+    def __init__(self):
+        self.inserted_coins = []
+
     def insert_coin(self, coin):
         if not isinstance(coin, money.Coin):
             raise ValueError()
 
-        return
+        self.inserted_coins.append(coin)
