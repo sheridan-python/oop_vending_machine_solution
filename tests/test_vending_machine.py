@@ -1,3 +1,6 @@
+"""
+Contains tests related to the vending machine.
+"""
 import pytest
 
 from models import money
@@ -82,11 +85,13 @@ def test_get_balance_returns_the_sum_of_inserted_coins():
 
 
 def test_get_change_when_nothing_inserted():
+    """Asserts that an empty list is returned when no balance."""
     machine = VendingMachine()
     assert machine.get_change() == []
 
 
 def test_get_change_when_balance_is_25_cents():
+    """Asserts that a 25 cent balance returns a quarter."""
     machine = VendingMachine()
     machine.insert_coin(money.Quarter())
 
@@ -105,6 +110,9 @@ def test_get_change_when_balance_is_one_dollar():
 
 
 def test_get_change_balance_is_all_coins():
+    """
+    Asserts that different coins are returned to complete balance.
+    """
     machine = VendingMachine()
     coins = [
         money.Toonie(),
@@ -120,6 +128,10 @@ def test_get_change_balance_is_all_coins():
 
 
 def test_get_change_balance_is_multiple_coins():
+    """
+    Asserts that duplicate coins are returned when there is a leftover
+    balance.
+    """
     machine = VendingMachine()
     coins = [
         money.Loonie(),
@@ -136,7 +148,11 @@ def test_get_change_balance_is_multiple_coins():
 
 
 def test_a_balance_that_is_not_a_multiple_of_five():
+    """
+    Asserts that irregular balance is ignored and kept by machine.
+    """
     class OneCent(money.Coin):
+        """One cent coin."""
         value = money.DollarAmount('0.01')
 
     machine = VendingMachine()
