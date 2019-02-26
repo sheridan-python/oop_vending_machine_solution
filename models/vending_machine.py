@@ -30,9 +30,10 @@ class VendingMachine:
         coins = []
         balance = self.get_balance()
 
-        for coin_class in COIN_CLASSES:
-            if coin_class.value == balance:
+        for coin_class in reversed(COIN_CLASSES):
+            if balance - coin_class.value >= 0:
                 coin = coin_class()  # Create a coin instance
                 coins.append(coin)
+                balance -= coin_class.value
 
         return coins
