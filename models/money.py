@@ -23,6 +23,9 @@ class Coin:
     def __radd__(self, other):
         return self.value + other
 
+    def __eq__(self, other):
+        return self.value == other.value
+
 
 class FiveCent(Coin):
     value = DollarAmount('0.05')

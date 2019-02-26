@@ -18,5 +18,4 @@ class VendingMachine:
         return sum(self.inserted_coins)
 
     def get_change(self):
-        change = []
-        return change
+        return self.inserted_coins
