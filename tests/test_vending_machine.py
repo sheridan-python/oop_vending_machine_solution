@@ -102,3 +102,18 @@ def test_get_change_when_balance_is_one_dollar():
         machine.insert_coin(money.Quarter())
 
     assert machine.get_change() == [money.Loonie()]
+
+
+def test_get_change_balance_is_all_coins():
+    machine = VendingMachine()
+    coins = [
+        money.Toonie(),
+        money.Loonie(),
+        money.Quarter(),
+        money.TenCent(),
+        money.FiveCent()
+    ]
+    for coin in coins:
+        machine.insert_coin(coin)
+
+    assert machine.get_change() == coins
