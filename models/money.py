@@ -35,3 +35,7 @@ class Quarter(Coin):
 
 class Loonie(Coin):
     pass
+
+
+class Toonie(Coin):
+    pass

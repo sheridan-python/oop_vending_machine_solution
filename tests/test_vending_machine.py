@@ -43,3 +43,11 @@ def test_insert_loonie():
     """
     machine = VendingMachine()
     machine.insert_coin(money.Loonie())
+
+
+def test_insert_toonie():
+    """
+    Given a toonie, no error should be raised.
+    """
+    machine = VendingMachine()
+    machine.insert_coin(money.Toonie())

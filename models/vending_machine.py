@@ -10,7 +10,8 @@ class VendingMachine:
                 money.Quarter,
                 money.FiveCent,
                 money.TenCent,
-                money.Loonie
+                money.Loonie,
+                money.Toonie
         )):
             return
 
