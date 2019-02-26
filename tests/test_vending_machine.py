@@ -64,3 +64,18 @@ def test_insert_coins_stores_on_object():
         machine.insert_coin(coin)
 
     assert machine.inserted_coins == coins
+
+
+def test_get_balance_returns_the_sum_of_inserted_coins():
+    """
+    Given each type of coin is inserted, a dollar amount of 3.40
+    should be returned.
+    """
+    machine = VendingMachine()
+    machine.insert_coin(money.Toonie())
+    machine.insert_coin(money.Loonie())
+    machine.insert_coin(money.Quarter())
+    machine.insert_coin(money.TenCent())
+    machine.insert_coin(money.FiveCent())
+
+    assert machine.get_balance() == money.DollarAmount('3.40')

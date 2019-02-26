@@ -13,3 +13,6 @@ class VendingMachine:
             raise ValueError()
 
         self.inserted_coins.append(coin)
+
+    def get_balance(self):
+        return sum(self.inserted_coins)
