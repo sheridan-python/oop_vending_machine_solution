@@ -18,24 +18,27 @@ class DollarAmount(Decimal):
 
 
 class Coin:
-    pass
+    value = DollarAmount('0')
+
+    def __radd__(self, other):
+        return self.value + other
 
 
 class FiveCent(Coin):
-    pass
+    value = DollarAmount('0.05')
 
 
 class TenCent(Coin):
-    pass
+    value = DollarAmount('0.10')
 
 
 class Quarter(Coin):
-    pass
+    value = DollarAmount('0.25')
 
 
 class Loonie(Coin):
-    pass
+    value = DollarAmount('1')
 
 
 class Toonie(Coin):
-    pass
+    value = DollarAmount('2')
