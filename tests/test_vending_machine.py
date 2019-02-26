@@ -133,3 +133,13 @@ def test_get_change_balance_is_multiple_coins():
         machine.insert_coin(coin)
 
     assert machine.get_change() == coins
+
+
+def test_a_balance_that_is_not_a_multiple_of_five():
+    class OneCent(money.Coin):
+        value = money.DollarAmount('0.01')
+
+    machine = VendingMachine()
+    machine.insert_coin(OneCent())
+
+    assert machine.get_change() == []
