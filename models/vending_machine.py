@@ -29,6 +29,7 @@ class VendingMachine:
     def get_change(self):
         coins = []
         balance = self.get_balance()
+        balance -= balance * 100 % 5
 
         while balance > 0:
             for coin_class in reversed(COIN_CLASSES):
