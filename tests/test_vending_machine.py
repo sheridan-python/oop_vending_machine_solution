@@ -84,3 +84,10 @@ def test_get_balance_returns_the_sum_of_inserted_coins():
 def test_get_change_when_nothing_inserted():
     machine = VendingMachine()
     assert machine.get_change() == []
+
+
+def test_get_change_when_balance_is_25_cents():
+    machine = VendingMachine()
+    machine.insert_coin(money.Quarter())
+
+    assert machine.get_change() == [money.Quarter()]
