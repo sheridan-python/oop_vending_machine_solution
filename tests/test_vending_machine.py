@@ -91,3 +91,14 @@ def test_get_change_when_balance_is_25_cents():
     machine.insert_coin(money.Quarter())
 
     assert machine.get_change() == [money.Quarter()]
+
+
+def test_get_change_when_balance_is_one_dollar():
+    """
+    Given a balance of $1, a loonie should be returned.
+    """
+    machine = VendingMachine()
+    for _ in range(4):  # Repeat 4 times
+        machine.insert_coin(money.Quarter())
+
+    assert machine.get_change() == [money.Loonie()]
