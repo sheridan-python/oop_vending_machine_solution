@@ -15,3 +15,11 @@ class DollarAmount(Decimal):
 
     def __str__(self):
         return f'${self:,.2f}'
+
+
+class Coin:
+    pass
+
+
+class Quarter(Coin):
+    pass
